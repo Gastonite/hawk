@@ -419,6 +419,41 @@ describe('Plugin', () => {
             expect(res.result).to.equal('Success');
         });
 
+        it('returns a reply on successful auth when using a custom path header key', async () => {
+
+            const server = Hapi.server();
+            await server.register(Hawk);
+
+            server.auth.strategy('default', 'hawk', {
+                getCredentialsFunc,
+                hawk: {
+                    pathHeaderName: 'custom'
+                }
+            });
+
+            server.route({
+                method: 'POST',
+                path: '/hawk',
+                handler: function (request, h) {
+
+                    return 'Success';
+                },
+                options: { auth: 'default' }
+            });
+
+            const res = await server.inject({
+                method: 'POST',
+                url: 'http://example.com:8080/hawk',
+                headers: {
+                    authorization: hawkHeader('john', '/my-custom-pathname?with=query').header,
+                    custom: '/my-custom-pathname?with=query'
+                }
+            });
+
+            expect(res.statusCode).to.equal(200);
+            expect(res.result).to.equal('Success');
+        });
+
         it('returns a reply on successful auth and payload validation', async () => {
 
             const server = Hapi.server();
