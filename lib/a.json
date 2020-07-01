@@ -1,0 +1,50 @@
+s{
+  "headers": {
+    "authorization": "Hawk id=\"Fe26.2**0dd8599531263ba0abd4bde8f670e26a115def6724a249a289e5bd2c0aa5b602*ngq3J4cUdt1Gf-g25uauIQ*jCJusILjUayo5K8hT1cqBcAN208lluxarENxmJgOvEtz-XASpTaDbGuA50Cmh4Q7KS9Plkx1W0UQTzt7C4hgP7NI3ZFwGci2ZgpnqScxaZgbexAPzHbxKhbFZgbTXY8OfJ8GEigtZbKTixFg6WFAkyOSKYdRXUw6YW2GkZzLsC1hbp-Ku_G4YTKMzdoy8LIauUDuhMtHhLbQGq_Z61baWcBkVdmNX2V8jgastfk_ipQOIjl9-5tU5p6Mbz5W_2c1pkYMPEHAjejHisCioA0NXQ**63e4f3e09b51099a224b863e26c074cb7e18f394038a37147b965a993ef761e1*GRbz7fjGzm6ATctPERbU3t2iQ7ZLj1xONwP1mufs-xI\", ts=\"1593564154\", nonce=\"Vy5F6o\", mac=\"ZC49M9CBqQPov4axxZO8H4KQyjQSTJvG4j0h1/0Nf9w=\", app=\"users\"",
+    "user-agent": "shot",
+    "host": "messages:8080"
+  },
+  "method": "auth",
+  "url": "http://messages:8080/nes/auth",
+  "response": {
+    "data": null,
+    "isBoom": true,
+    "isServer": false,
+    "output": {
+      "statusCode": 401,
+      "payload": {
+        "statusCode": 401,
+        "error": "Unauthorized",
+        "message": "Bad mac",
+        "attributes": {
+          "error": "Bad mac"
+        }
+      },
+      "headers": {
+        "WWW-Authenticate": "Hawk error=\"Bad mac\""
+      }
+    },
+    "credentials": {
+      "algorithm": "sha256",
+      "app": "users",
+      "exp": 1593567741894,
+      "grant": "RUcg-ZdmjLkIK7gHUDpvu_x-",
+      "key": "QpxFxaCFLmPV4jfL49d9VZJJQKth7S8k",
+      "scope": [
+        "subscribeMessages(askQuestion)",
+        "publishMessage(sendEmail)"
+      ]
+    },
+    "artifacts": {
+      "method": "AUTH",
+      "host": "messages",
+      "port": 443,
+      "resource": "/nes/auth",
+      "ts": "1593564154",
+      "nonce": "Vy5F6o",
+      "app": "users",
+      "mac": "ZC49M9CBqQPov4axxZO8H4KQyjQSTJvG4j0h1/0Nf9w=",
+      "id": "Fe26.2**0dd8599531263ba0abd4bde8f670e26a115def6724a249a289e5bd2c0aa5b602*ngq3J4cUdt1Gf-g25uauIQ*jCJusILjUayo5K8hT1cqBcAN208lluxarENxmJgOvEtz-XASpTaDbGuA50Cmh4Q7KS9Plkx1W0UQTzt7C4hgP7NI3ZFwGci2ZgpnqScxaZgbexAPzHbxKhbFZgbTXY8OfJ8GEigtZbKTixFg6WFAkyOSKYdRXUw6YW2GkZzLsC1hbp-Ku_G4YTKMzdoy8LIauUDuhMtHhLbQGq_Z61baWcBkVdmNX2V8jgastfk_ipQOIjl9-5tU5p6Mbz5W_2c1pkYMPEHAjejHisCioA0NXQ**63e4f3e09b51099a224b863e26c074cb7e18f394038a37147b965a993ef761e1*GRbz7fjGzm6ATctPERbU3t2iQ7ZLj1xONwP1mufs-xI"
+    }
+  }
+}
